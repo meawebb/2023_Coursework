@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="LBLreqinfo" min="-2" pref="117" max="-2" attributes="0"/>
+                          <Component id="LBLentertxt" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="TXTFartist" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
+                                  <Component id="LBLartist" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                                  <Component id="LBLerror1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="TXTFsongname" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                          <Component id="LBLsongname" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="LBLpart" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CBpart" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="LBLerror2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="BTNsubmittab" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="TXTFgenre" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                  <Component id="LBLgenre" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LBLerror4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="TXTFtempo" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
+                                          <Component id="LBLtempo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="LBLdiff" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CBdiff" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LBLsuccess" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="LBLerror5" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="TXTFtab" min="-2" pref="297" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="LBLerror3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="84" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="TXTFsearch" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="BTNSort" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="BTNhistory" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="BTNAdmin" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="BTNlogout" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="BTNexit" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="TXTFsearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BTNSort" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BTNhistory" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BTNAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BTNlogout" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BTNexit" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="LBLreqinfo" min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="LBLartist" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LBLsongname" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LBLpart" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="TXTFartist" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TXTFsongname" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CBpart" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="LBLerror1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LBLerror2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="LBLentertxt" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="TXTFtab" alignment="3" min="-2" pref="132" max="-2" attributes="0"/>
+                  <Component id="LBLerror3" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="27" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="LBLgenre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LBLtempo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LBLdiff" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="TXTFgenre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TXTFtempo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CBdiff" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="LBLerror4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LBLerror5" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BTNsubmittab" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LBLsuccess" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JTextField" name="TXTFsearch">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Search...."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BTNSort">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sort"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTNSortActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BTNhistory">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="History"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTNhistoryActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BTNAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Admin"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTNAdminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BTNlogout">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Log Out"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTNlogoutActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BTNexit">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Exit"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTNexitActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLreqinfo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Required Information"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLartist">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Artist"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLsongname">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Song Name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="TXTFartist">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXTFartistActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="TXTFsongname">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXTFsongnameActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="CBpart">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="7">
+            <StringItem index="0" value="Chorus"/>
+            <StringItem index="1" value="Intro"/>
+            <StringItem index="2" value="Verse 1"/>
+            <StringItem index="3" value="Verse 2"/>
+            <StringItem index="4" value="Verse 3"/>
+            <StringItem index="5" value="Verse 4"/>
+            <StringItem index="6" value="Bridge"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLpart">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Part"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLentertxt">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Enter Tab Text Here..."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="TXTFtab">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXTFtabActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLerror1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLerror2">
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLgenre">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Genre"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BTNsubmittab">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Submit Tab"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTNsubmittabActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="TXTFgenre">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXTFgenreActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="TXTFtempo">
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLtempo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tempo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLerror3">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="CBdiff">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="5">
+            <StringItem index="0" value="1"/>
+            <StringItem index="1" value="2"/>
+            <StringItem index="2" value="3"/>
+            <StringItem index="3" value="4"/>
+            <StringItem index="4" value="5"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLdiff">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Difficulty"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLerror4">
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLerror5">
+    </Component>
+    <Component class="javax.swing.JLabel" name="LBLsuccess">
+    </Component>
+  </SubComponents>
+</Form>
