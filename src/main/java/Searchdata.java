@@ -21,15 +21,7 @@ public class Searchdata {
     private static final String USERNAME = "2022c_MWebb";
     private static final String PASSWORD = "4karqaUCSmddPKv8";
     
-     public static ResultSet getData() throws SQLException {
-     String selectSQL = "SELECT TABID, SONGNAME FROM DBUSER WHERE TABID = ?" ;
-   
-     Connection con = DriverManager.getConnection(CONN_URL + DB_NAME, USERNAME, PASSWORD);
-     String sql = "SELECT * FROM tabs";
-     
-    Statement st = con.prepareStatement(selectSQL);
-     .setInt(1, 1001);
-    ResultSet rs = st.executeQuery(sql);
+    
     
      
     

@@ -46,6 +46,19 @@ public class DAO {
         return rs;
     }
     
+    public static ResultSet getTab() throws SQLException {
+        String sql ="SELECT TabBody " + "FROM Notes";
+        Connection con = DriverManager.getConnection(CONN_URL + DB_NAME, USERNAME, PASSWORD);
+
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+
+        return rs;
+        
+                
+        
+    }
+    
     
     
     

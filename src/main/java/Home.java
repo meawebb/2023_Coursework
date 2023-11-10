@@ -1,3 +1,6 @@
+
+import java.sql.ResultSet;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -36,6 +39,7 @@ public class Home extends javax.swing.JFrame {
         TXTFsearch = new javax.swing.JTextField();
         BTNtestDB = new javax.swing.JButton();
         LBLsuccess = new javax.swing.JLabel();
+        BTNtesttab = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -111,6 +115,13 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        BTNtesttab.setText("TEST TAB");
+        BTNtesttab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTNtesttabActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,13 +143,15 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(BTNexit)
                 .addGap(4, 4, 4))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(BTNtestDB))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(LBLsuccess)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BTNtesttab)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(33, 33, 33)
+                            .addComponent(BTNtestDB))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(49, 49, 49)
+                            .addComponent(LBLsuccess))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -157,7 +170,9 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(BTNtestDB)
                 .addGap(18, 18, 18)
                 .addComponent(LBLsuccess)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BTNtesttab)
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         pack();
@@ -205,6 +220,16 @@ public class Home extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BTNhistoryActionPerformed
 
+    private void BTNtesttabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNtesttabActionPerformed
+        
+        new OpenTab().setVisible(true);
+        this.dispose();
+        
+        
+            
+        
+    }//GEN-LAST:event_BTNtesttabActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -248,6 +273,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton BTNsort;
     private javax.swing.JButton BTNsubmit;
     private javax.swing.JButton BTNtestDB;
+    private javax.swing.JButton BTNtesttab;
     private javax.swing.JLabel LBLsuccess;
     private javax.swing.JTextField TXTFsearch;
     private javax.swing.JPopupMenu jPopupMenu1;
