@@ -3,7 +3,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
@@ -43,8 +45,9 @@ public class OpenTab extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtOpenedTab = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtOpenedTab = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -53,15 +56,17 @@ public class OpenTab extends javax.swing.JFrame {
             }
         });
 
-        txtOpenedTab.setColumns(20);
-        txtOpenedTab.setRows(100);
-
-        jButton1.setText("jButton1");
+        jButton1.setText("Click for Tab!!!!");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        txtOpenedTab.setEditable(false);
+        txtOpenedTab.setColumns(20);
+        txtOpenedTab.setRows(100);
+        jScrollPane1.setViewportView(txtOpenedTab);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,21 +74,22 @@ public class OpenTab extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtOpenedTab, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
                 .addComponent(jButton1)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtOpenedTab, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(jButton1)
-                .addContainerGap(299, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -93,28 +99,40 @@ public class OpenTab extends javax.swing.JFrame {
         
     }
 
-        private void fetchTextFromDatabase() {
-           
-        }
+    
             private static final String CONN_URL = "jdbc:mysql://computing.gfmat.org:3306/";
              private static final String DB_NAME = "2022c_MWebb_test";
              private static final String USERNAME = "2022c_MWebb";
              private static final String PASSWORD = "4karqaUCSmddPKv8";
             
         public void sqlTestDBConnection() throws SQLException {
+            System.out.println("test!");
             try {
-                Connection con = DriverManager.getConnection(CONN_URL, USERNAME, PASSWORD); 
+                Connection con = DriverManager.getConnection(CONN_URL + DB_NAME, USERNAME, PASSWORD); 
                 String query = "SELECT TabBody FROM Notes";
-                PreparedStatement preparedStatement = con.prepareStatement(query);
+                ArrayList<String> list = new ArrayList<>();
+                try (PreparedStatement preparedStatement = con.prepareStatement(query)){
                 ResultSet resultSet = preparedStatement.executeQuery();
-                System.out.println("cONNECTION MADE");
-                System.out.println(query);
-                // Append text from the database to the text area
-                    txtOpenedTab.append(resultSet.getString("TabBody"));
-                        
-                    } catch (Exception e) {
-                        
+                ResultSetMetaData rsmd = resultSet.getMetaData();
+                int columnCount = rsmd.getColumnCount();
+                while(resultSet.next()){
+                    int i = 1;
+                    while(i<=columnCount){
+                        list.add(resultSet.getString(i++));
+                        txtOpenedTab.append(resultSet.getString("TabBody"));
+                    }
                 }
+            }
+                con.close();
+                //System.out.println("cONNECTION MADE");
+                //System.out.println(query);
+                // Append text from the database to the text area
+                //System.out.println(resultSet);
+                    //txtOpenedTab.append(resultSet.getString("TabBody"));
+                        
+            } catch (Exception e) {
+                        System.out.println("SOMETHING WENT WRONG..." + e.getMessage());
+        }
             
         
             
@@ -132,7 +150,9 @@ public class OpenTab extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       
         try {
+            System.out.println("test");
             sqlTestDBConnection();
         } catch (SQLException ex) {
             Logger.getLogger(OpenTab.class.getName()).log(Level.SEVERE, null, ex);
@@ -153,6 +173,7 @@ public class OpenTab extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtOpenedTab;
     // End of variables declaration//GEN-END:variables
 
