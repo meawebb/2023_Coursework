@@ -1,23 +1,28 @@
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.DefaultListModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author 2-MWebb
  */
 public class Home extends javax.swing.JFrame {
 
+    Searchdata search = new Searchdata();
+
     /**
      * Creates new form Home
      */
     public Home() {
+        DefaultListModel dlm;
         initComponents();
+        
     }
 
     /**
@@ -40,6 +45,9 @@ public class Home extends javax.swing.JFrame {
         BTNtestDB = new javax.swing.JButton();
         LBLsuccess = new javax.swing.JLabel();
         BTNtesttab = new javax.swing.JButton();
+        BTNgo = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        LSTtabs = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -122,37 +130,53 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        BTNgo.setText("Go");
+        BTNgo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTNgoActionPerformed(evt);
+            }
+        });
+
+        jScrollPane1.setViewportView(LSTtabs);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(111, Short.MAX_VALUE)
-                .addComponent(TXTFsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BTNsubmit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BTNsort)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BTNhistory)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BTNadmin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BTNLogout)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BTNexit)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TXTFsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BTNgo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BTNtesttab)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(33, 33, 33)
+                                    .addComponent(BTNtestDB))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(49, 49, 49)
+                                    .addComponent(LBLsuccess))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BTNsubmit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BTNsort)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BTNhistory)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BTNadmin)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BTNLogout)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BTNexit))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BTNtesttab)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(33, 33, 33)
-                            .addComponent(BTNtestDB))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(49, 49, 49)
-                            .addComponent(LBLsuccess))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,14 +189,20 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(BTNLogout)
                     .addComponent(BTNexit)
                     .addComponent(BTNadmin)
-                    .addComponent(TXTFsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(86, 86, 86)
-                .addComponent(BTNtestDB)
-                .addGap(18, 18, 18)
-                .addComponent(LBLsuccess)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BTNtesttab)
-                .addContainerGap(107, Short.MAX_VALUE))
+                    .addComponent(TXTFsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BTNgo))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(BTNtestDB)
+                        .addGap(18, 18, 18)
+                        .addComponent(LBLsuccess)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BTNtesttab))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
 
         pack();
@@ -198,14 +228,14 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_BTNexitActionPerformed
 
     private void TXTFsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTFsearchActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_TXTFsearchActionPerformed
 
     private void BTNtestDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNtestDBActionPerformed
         boolean connect = DAO.sqlTestDBConnection(); //calls query
         if (connect == true) {
             LBLsuccess.setText("Connection Made!");
-        } else{
+        } else {
             LBLsuccess.setText("Connection Failed!");
         }
     }//GEN-LAST:event_BTNtestDBActionPerformed
@@ -221,14 +251,27 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_BTNhistoryActionPerformed
 
     private void BTNtesttabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNtesttabActionPerformed
-        
+
         new OpenTab().setVisible(true);
         this.dispose();
-        
-        
-            
-        
+
+
     }//GEN-LAST:event_BTNtesttabActionPerformed
+
+    private void BTNgoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNgoActionPerformed
+
+        try {
+            DefaultListModel dlm = new DefaultListModel();
+            String searchvalue = TXTFsearch.getText();
+            dlm.addElement(search.searchsong(searchvalue));
+            System.out.println(dlm);
+        } catch (Exception e) {
+            System.out.println("SOMETHING WENT WRONG..." + e.getMessage());
+        }
+        //LSTtabs.setModel(dlm);
+        
+
+    }//GEN-LAST:event_BTNgoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,13 +312,16 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton BTNLogout;
     private javax.swing.JButton BTNadmin;
     private javax.swing.JButton BTNexit;
+    private javax.swing.JButton BTNgo;
     private javax.swing.JButton BTNhistory;
     private javax.swing.JButton BTNsort;
     private javax.swing.JButton BTNsubmit;
     private javax.swing.JButton BTNtestDB;
     private javax.swing.JButton BTNtesttab;
     private javax.swing.JLabel LBLsuccess;
+    private javax.swing.JList<String> LSTtabs;
     private javax.swing.JTextField TXTFsearch;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
