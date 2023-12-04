@@ -264,11 +264,12 @@ public class Home extends javax.swing.JFrame {
             DefaultListModel dlm = new DefaultListModel();
             String searchvalue = TXTFsearch.getText();
             dlm.addElement(search.searchsong(searchvalue));
-            System.out.println(dlm);
+            System.out.println("Hello"+ dlm);
+                    LSTtabs.setModel(dlm);
+
         } catch (Exception e) {
             System.out.println("SOMETHING WENT WRONG..." + e.getMessage());
         }
-        //LSTtabs.setModel(dlm);
         
 
     }//GEN-LAST:event_BTNgoActionPerformed
